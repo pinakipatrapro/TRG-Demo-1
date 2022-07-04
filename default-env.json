@@ -1,25 +1,11 @@
 {
     "destinations": [
-        {
-            "name": "ui5.ts",
-            "url": "http://localhost:8080",
-            "forwardAuthToken": true
-        },
+        
         {
             "name": "api",
-            "url": "http://localhost:4004",
-            "forwardAuthToken": true,
+            "url": "https://services.odata.org/v2/northwind/northwind.svc",
+            "forwardAuthToken": false,
             "timeout": 999999
-        },
-        {
-            "name": "uiapp",
-            "url": "http://localhost:8081",
-            "forwardAuthToken": true
-        },
-        {
-            "name": "ml",
-            "url": "http://localhost:4005",
-            "forwardAuthToken": true
         }
     ],
     "VCAP_SERVICES": {

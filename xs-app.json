@@ -9,13 +9,13 @@
       {
         "source": "/api/(.*)$",
         "target": "/$1",
-        "authenticationType": "xsuaa",
+        "authenticationType": "none",
         "destination": "api"
       },
       {
         "source": "/(.*)",
         "target": "$1",
-        "authenticationType": "none",
+        "authenticationType": "xsuaa",
         "localDir":"webapp"
     }
     ],

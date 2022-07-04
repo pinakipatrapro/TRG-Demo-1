@@ -4,9 +4,9 @@
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
-            <Button text="Add List Item" press="onAddListItem"/>
-            <List headerText="{i18n>listTitle}" items="{path:'localModel>/listItem'}">
-                <ObjectListItem title="{localModel>first_name}" />
+            <!-- <Button text="Add List Item" press="onAddListItem"/> -->
+            <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Customers'}">
+                <ObjectListItem title="{viewModel>ContactName}" />
             </List>
         </content>
     </Page>
