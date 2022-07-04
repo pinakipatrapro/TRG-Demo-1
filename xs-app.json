@@ -1,0 +1,26 @@
+{
+    "welcomeFile": "index.html",
+    "authenticationMethod": "route",
+    "logout": {
+      "logoutEndpoint": "/do/logout"
+    },
+    "routes": [
+     
+      {
+        "source": "/api/(.*)$",
+        "target": "/$1",
+        "authenticationType": "xsuaa",
+        "destination": "api"
+      },
+      {
+        "source": "/(.*)",
+        "target": "$1",
+        "authenticationType": "none",
+        "localDir":"webapp"
+    }
+    ],
+    "responseHeaders" : [
+      {"name": "Access-Control-Allow-Origin", "value": "*"}
+    ]
+  
+  }

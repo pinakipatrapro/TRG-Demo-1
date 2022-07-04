@@ -34,3 +34,8 @@ Demo application.
 
 
 # TRG-Demo-1
+
+
+
+
+{"xsappname":"xsuaa_1656895876590","tenant-mode":"dedicated","description":"Security profile of called application","scopes":[{"name":"uaa.user","description":"UAA"}],"role-templates":[{"name":"Token_Exchange","description":"UAA","scope-references":["uaa.user"]}],"oauth2-configuration":{"redirect-uris":["https://*.us10.trial.applicationstudio.cloud.sap/**"]}}

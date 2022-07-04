@@ -1,0 +1,59 @@
+{
+    "destinations": [
+        {
+            "name": "ui5.ts",
+            "url": "http://localhost:8080",
+            "forwardAuthToken": true
+        },
+        {
+            "name": "api",
+            "url": "http://localhost:4004",
+            "forwardAuthToken": true,
+            "timeout": 999999
+        },
+        {
+            "name": "uiapp",
+            "url": "http://localhost:8081",
+            "forwardAuthToken": true
+        },
+        {
+            "name": "ml",
+            "url": "http://localhost:4005",
+            "forwardAuthToken": true
+        }
+    ],
+    "VCAP_SERVICES": {
+        "xsuaa": [
+            {
+                "name": "local-uaa",
+                "instance_name": "local-uaa",
+                "label": "xsuaa",
+                "tags": [
+                    "xsuaa",
+                    "endpoint:https://api.cf.us10.hana.ondemand.com",
+                    "org:ec36c61ctrial",
+                    "space:dev"
+                ],
+                "plan": "application",
+                "credentials": {
+                    "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                    "clientid": "sb-xsuaa_1656895876590!t89749",
+                    "clientsecret": "M/LKWdfbEkvJyhRdMJ9GtuTrksA=",
+                    "credential-type": "instance-secret",
+                    "identityzone": "ec36c61ctrial",
+                    "identityzoneid": "4974b76d-3896-48e0-abd6-8bae80f4a75c",
+                    "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                    "service_key_name": "key",
+                    "subaccountid": "4974b76d-3896-48e0-abd6-8bae80f4a75c",
+                    "tenantid": "4974b76d-3896-48e0-abd6-8bae80f4a75c",
+                    "tenantmode": "dedicated",
+                    "uaadomain": "authentication.us10.hana.ondemand.com",
+                    "url": "https://ec36c61ctrial.authentication.us10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmnn0e6Aw/QqPraz2rBJ8\nDLASRnnpXs8bYv1GVUFDZIyYArjk/aQXiLbZjLad069AWdsRu4fdCTrUKgGZbkft\n8wa0/sABxxXa4AodzX+vxHnnAvWnc4gYjjuN1hXORaJr1pAdxSUrqd/jXBxKwguT\nkuvNk//EerfAOL6U5kovvpFLX9GibSrf6kMqF782LG7A2lnNXelEnIzYXxKpaWIl\njxIiBl39Zw+GP7dpBSzdt7AsJ2cmuVGk1pt0iam8xyA3d5Ic4GKIQSTxG43/XGKR\n9SSL6i+MycF6gbZ5A7rwvgTe/clKMyPk4uvZ46BmKVaaDj0x/OTlCkrRbtiwIUOO\n8QIDAQAB\n-----END PUBLIC KEY-----",
+                    "xsappname": "xsuaa_1656895876590!t89749",
+                    "zoneid": "4974b76d-3896-48e0-abd6-8bae80f4a75c"
+                }
+            }
+        ]
+    }
+}

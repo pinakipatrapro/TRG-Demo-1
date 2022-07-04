@@ -9,13 +9,16 @@
     "sapui5"
   ],
   "main": "webapp/index.html",
-  "dependencies": {},
+  "dependencies": {
+    "@sap/approuter": "^9.0.2"
+  },
   "devDependencies": {
     "@ui5/cli": "^2.14.1",
     "@sap/ux-ui5-tooling": "1"
   },
   "scripts": {
     "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#cybcomproject1-display\"",
+    "start-app": "node node_modules/@sap/approuter/approuter.js",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#cybcomproject1-display\"",
     "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "deploy": "fiori verify",
