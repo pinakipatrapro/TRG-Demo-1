@@ -4,6 +4,14 @@ specVersion: "2.5"
 metadata:
   name: cyb.com.project1
 type: application
+
+builder:
+  customTasks:
+    - name: webide-extension-task-copyFile
+      afterTask: uglify
+      configuration:
+        srcFile: "/xs-app-prod.json"
+        destFile: "/xs-app.json"
 server:
   customMiddleware:
     - name: fiori-tools-proxy

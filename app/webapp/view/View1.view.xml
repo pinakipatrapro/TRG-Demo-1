@@ -6,7 +6,7 @@
         <content>
             <!-- <Button text="Add List Item" press="onAddListItem"/> -->
             <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Customers'}">
-                <ObjectListItem title="{viewModel>ContactName}" />
+                <ObjectListItem title="{viewModel>ContactName}"  intro="{viewModel>CompanyName}"/>
             </List>
         </content>
     </Page>

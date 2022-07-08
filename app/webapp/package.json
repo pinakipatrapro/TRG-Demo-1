@@ -1,0 +1,28 @@
+{
+  "name": "project1",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Demo application.",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "main": "webapp/index.html",
+  "dependencies": {
+    "@sap/approuter": "^9.0.2"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^2.14.1",
+    "@sap/ux-ui5-tooling": "1"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ux-ui5-tooling"
+    ]
+  },
+  "sapuxLayer": "CUSTOMER_BASE"
+}

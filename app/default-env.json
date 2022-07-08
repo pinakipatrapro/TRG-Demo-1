@@ -2,7 +2,7 @@
     "destinations": [
         
         {
-            "name": "api",
+            "name": "northwind",
             "url": "https://services.odata.org/v2/northwind/northwind.svc",
             "forwardAuthToken": false,
             "timeout": 999999

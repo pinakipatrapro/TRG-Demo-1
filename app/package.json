@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "@ui5/cli": "^2.14.1",
-    "@sap/ux-ui5-tooling": "1"
+    "@sap/ux-ui5-tooling": "1",
+    "@sap/ui5-builder-webide-extension": "^1.0.14"
   },
   "scripts": {
     "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#cybcomproject1-display\"",
@@ -30,7 +31,8 @@
   },
   "ui5": {
     "dependencies": [
-      "@sap/ux-ui5-tooling"
+      "@sap/ux-ui5-tooling",
+      "@sap/ui5-builder-webide-extension"
     ]
   },
   "sapuxLayer": "CUSTOMER_BASE"

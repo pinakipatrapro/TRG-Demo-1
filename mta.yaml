@@ -1,0 +1,46 @@
+_schema-version: "3.1"
+ID: TRGDEMO1
+description: TRGDEMO1
+version: 1.0.0
+modules:
+- name: TRGDEMO1-ui
+  type: html5
+  path: app
+  requires:
+  - name: TRGDEMO1-uaa-service
+  - name: TRGDEMO1-destination
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+
+
+resources:
+- name: TRGDEMO1-uaa-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      tenant-mode: dedicated
+      xsappname: ui-app-${space}
+    service: xsuaa
+    service-plan: application
+- name: TRGDEMO1-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-name: TRGDEMO1-destination-service
+    service-plan: lite
+
+
+
+
+
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install --production
