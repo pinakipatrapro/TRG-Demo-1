@@ -6,6 +6,9 @@ modules:
 - name: TRGDEMO1-ui
   type: html5
   path: app
+  parameters:
+      disk-quota: 512M
+      memory: 256M
   requires:
   - name: TRGDEMO1-uaa-service
   - name: TRGDEMO1-destination
