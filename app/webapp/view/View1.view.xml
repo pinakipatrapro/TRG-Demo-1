@@ -4,10 +4,16 @@
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
-            <!-- <Button text="Add List Item" press="onAddListItem"/> -->
-            <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Customers'}">
-                <ObjectListItem title="{viewModel>ContactName}"  intro="{viewModel>CompanyName}"/>
-            </List>
+            <HBox>
+                <!-- <Button text="Add List Item" press="onAddListItem"/> -->
+                <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Customers'}" height="30rem" width="40rem">
+                    <ObjectListItem title="{viewModel>ContactName}"  intro="{viewModel>CompanyName}"/>
+                </List>
+
+                <List headerText="Local Express" items="{path:'localModel>/listData'}" height="30rem" width="40rem">
+                    <ObjectListItem title="{localModel>first_name}"  intro="{localModel>email}"/>
+                </List>
+             </HBox>
         </content>
     </Page>
 </mvc:View>
