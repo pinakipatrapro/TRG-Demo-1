@@ -6,6 +6,12 @@
             "url": "https://services.odata.org/v2/northwind/northwind.svc",
             "forwardAuthToken": false,
             "timeout": 999999
+        },
+        {
+            "name": "localNode",
+            "url": "http://localhost:4004",
+            "forwardAuthToken": false,
+            "timeout": 999999
         }
     ],
     "VCAP_SERVICES": {

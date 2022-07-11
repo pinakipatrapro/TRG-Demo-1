@@ -12,12 +12,33 @@ modules:
   requires:
   - name: TRGDEMO1-uaa-service
   - name: TRGDEMO1-destination
+  - name: node-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      timeout: 300000
+      name: localNode
+      url: '~{srv-url}'
   build-parameters:
     build-result: dist
     builder: custom
     commands:
     - npm install
     - npm run build
+- name: TRGDEMO1-api
+  type: nodejs
+  path: srv
+  parameters:
+      disk-quota: 256M
+      memory: 512M
+  provides:
+    - name: node-api    
+      properties:
+        srv-url: ${default-url}
+  requires:
+    - name: TRGDEMO1-uaa-service
+  properties:
+    SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
 
 
 resources:

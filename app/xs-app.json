@@ -6,12 +6,18 @@
     },
     "routes": [
      
-      {
+        {
+            "source": "/localNode/(.*)$",
+            "target": "/$1",
+            "authenticationType": "none",
+            "destination": "localNode"
+        },
+        {
         "source": "/api/(.*)$",
         "target": "/$1",
         "authenticationType": "none",
         "destination": "northwind"
-      },
+        },
       {
         "source": "/(.*)",
         "target": "$1",
