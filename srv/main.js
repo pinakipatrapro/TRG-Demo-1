@@ -1,7 +1,7 @@
 
 const express = require('express')
 const app = express()
-const port = 4004
+var port = process.env.PORT || 4004;
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
