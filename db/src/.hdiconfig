@@ -1,9 +1,6 @@
 {
-	"minimum_feature_version": "1000",
+	"minimum_feature_version": "1006",
 	"file_suffixes": {
-		"hdbafllangprocedure": {
-			"plugin_name": "com.sap.hana.di.afllangprocedure"
-		},
 		"hdbapplicationtime": {
 			"plugin_name": "com.sap.hana.di.applicationtime"
 		},
@@ -12,6 +9,9 @@
 		},
 		"hdbcollection": {
 			"plugin_name": "com.sap.hana.di.collection"
+		},
+		"hdbcollectionindex": {
+			"plugin_name": "com.sap.hana.di.collection.index"
 		},
 		"hdbconstraint": {
 			"plugin_name": "com.sap.hana.di.constraint"

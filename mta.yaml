@@ -40,6 +40,13 @@ modules:
   properties:
     SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
 
+- name: db
+  type: hdb
+  path: db
+  requires:
+  - name: TRGDEMO1-db
+    properties:
+      TARGET_CONTAINER: '~{hdi-container-name}'
 
 resources:
 - name: TRGDEMO1-uaa-service
@@ -56,7 +63,13 @@ resources:
     service: destination
     service-name: TRGDEMO1-destination-service
     service-plan: lite
-
+- name: TRGDEMO1-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: TRG
+  properties:
+    hdi-container-name: ${service-name}
 
 
 
