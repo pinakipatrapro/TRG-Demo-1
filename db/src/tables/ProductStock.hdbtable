@@ -1,0 +1,6 @@
+COLUMN TABLE "TRG.ProductStock" (
+  "ProductID" NVARCHAR(50),
+  "Quantity" INTEGER,
+  "Status" NVARCHAR(50),
+  PRIMARY KEY ("ProductID")
+) UNLOAD PRIORITY 5 AUTO MERGE  
