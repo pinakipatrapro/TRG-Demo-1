@@ -1,0 +1,11 @@
+COLUMN TABLE "TRG.PRODUCT" (
+  "ID" NVARCHAR(50),
+  "CreatedBy" NVARCHAR(100),
+  "CreatedOn" LONGDATE,
+  "ModifiedBy" NVARCHAR(100),
+  "ModifiedAt" LONGDATE,
+  "Name" NVARCHAR(200),
+  "Description" NVARCHAR(1000),
+  "Status" NVARCHAR(50),
+  PRIMARY KEY ("ID")
+) UNLOAD PRIORITY 5 AUTO MERGE  
