@@ -16,7 +16,6 @@
 
 
 
-
 # @name login
 GET https://ec36c61ctrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials&username={{username}}&password={{password}}
 Content-Type: application/json
@@ -37,7 +36,7 @@ Authorization: Basic sb-xsuaa_1656895876590!t89749:M/LKWdfbEkvJyhRdMJ9GtuTrksA=
 
 
 
-###Get Projects
+###Get Project
 GET http://localhost:4004/Product.xsodata/Product?$format=json
 Content-Type: application/json
 Authorization: Bearer {{token}}

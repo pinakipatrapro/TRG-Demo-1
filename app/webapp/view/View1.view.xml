@@ -6,8 +6,8 @@
         <content>
             <HBox>
                 <!-- <Button text="Add List Item" press="onAddListItem"/> -->
-                <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Customers'}" height="30rem" width="40rem">
-                    <ObjectListItem title="{viewModel>ContactName}"  intro="{viewModel>CompanyName}"/>
+                <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Product'}" height="30rem" width="40rem">
+                    <ObjectListItem title="{viewModel>Name}"  intro="{viewModel>Description}"/>
                 </List>
 
                 <List headerText="Local Express" items="{path:'localModel>/listData'}" height="30rem" width="40rem">

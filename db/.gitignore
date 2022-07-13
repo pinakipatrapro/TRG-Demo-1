@@ -4,3 +4,5 @@ node_modules
 project1/db/.env
 # auto generated wildcard
 project1/srv/.env
+# auto generated wildcard
+project1/app/.env

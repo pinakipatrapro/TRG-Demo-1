@@ -5,7 +5,7 @@ const dbClass = require("sap-hdbext-promisfied")
 const axios = require('axios').default;
 
 router.post('/create', async function(req, res, next) {  
-    console.log(req.body)
+    // console.log(req.body)
   var sql = `
     INSERT INTO "TRG.PRODUCT" VALUES(
       sysuuid,

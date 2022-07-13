@@ -7,7 +7,7 @@ var xsjs = require("@sap/xsjs");
 const axios = require('axios').default;
 
 xsenv.loadEnv();
-var port = process.env.PORT || 4004;
+var port = process.env.PORT || 4005;
 var app = express();
 
 var bodyParser = require('body-parser')
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-// XSUAA Middleware
+// XSUAA Middleware   
 
 passport.use(new JWTStrategy(xsenv.getServices({uaa:{tag:'xsuaa'}}).uaa));
 
@@ -36,7 +36,7 @@ app.use('/routes/Products',authenticateRoute, ProductsRoute);
 
 
 
-//XSJS routing
+//XSODATA
 var options = {
 	auditLog : { logToConsole: true }, 
 	redirectUrl: "/index.xsjs",

@@ -8,7 +8,7 @@
         },
         {
             "name": "localNode",
-            "url": "http://localhost:4004",
+            "url": "http://localhost:4005",
             "forwardAuthToken": true,
             "timeout": 999999
         }
