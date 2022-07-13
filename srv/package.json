@@ -1,8 +1,21 @@
 {
   "dependencies": {
-    "express": "*"
+    "@sap/hdbext": "*",
+    "@sap/xsenv": "*",
+    "@sap/xsjs": "*",
+    "@sap/xssec": "*",
+    "axios": "*",
+    "body-parser": "^1.20.0",
+    "csvtojson": "^2.0.10",
+    "express": "*",
+    "express-fileupload": "^1.2.1",
+    "passport": "*",
+    "sap-hdbext-promisfied": "*",
+    "uuid": "^8.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "json-hana-sql": "^1.0.4"
+  },
   "files": [],
   "main": "main.js",
   "name": "srv",

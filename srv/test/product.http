@@ -1,0 +1,54 @@
+@username = ppatra.aec@gmail.com
+@password = Sap#2022
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# @name login
+GET https://ec36c61ctrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials&username={{username}}&password={{password}}
+Content-Type: application/json
+Authorization: Basic sb-xsuaa_1656895876590!t89749:M/LKWdfbEkvJyhRdMJ9GtuTrksA=
+
+@token = {{login.response.body.access_token}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Get Projects
+GET http://localhost:4004/Product.xsodata/Product?$format=json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+### Create Project
+POST http://localhost:4004/routes/Products/create
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name"         : "TEST", 
+    "description"  : "TEST" 
+}

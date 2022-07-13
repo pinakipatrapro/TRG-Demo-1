@@ -9,7 +9,7 @@
         {
             "source": "/localNode/(.*)$",
             "target": "/$1",
-            "authenticationType": "none",
+            "authenticationType": "xsuaa",
             "destination": "localNode"
         },
         {

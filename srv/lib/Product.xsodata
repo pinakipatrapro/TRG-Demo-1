@@ -1,0 +1,5 @@
+service{
+        
+    "CVProduct" as "Product" keys ("ID");
+        
+} 

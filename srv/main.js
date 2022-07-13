@@ -1,39 +1,61 @@
+const passport = require('passport');
+const { JWTStrategy } = require('@sap/xssec');
+const xsenv = require('@sap/xsenv');
+var hdbext = require('@sap/hdbext');
+var express = require('express');
+var xsjs = require("@sap/xsjs");
+const axios = require('axios').default;
 
-const express = require('express')
-const app = express()
+xsenv.loadEnv();
 var port = process.env.PORT || 4004;
+var app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+var bodyParser = require('body-parser')
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
-app.get('/json', (req, res) => {
-    res.send(
-        [{
-            "id": 1,
-            "first_name": "Branden",
-            "last_name": "Drews",
-            "email": "bdrews0@theatlantic.com",
-            "gender": "Male",
-            "ip_address": "200.92.26.247"
-          }, {
-            "id": 2,
-            "first_name": "Peterus",
-            "last_name": "Coupman",
-            "email": "pcoupman1@addthis.com",
-            "gender": "Male",
-            "ip_address": "49.22.188.21"
-          }, {
-            "id": 3,
-            "first_name": "Bevvy",
-            "last_name": "Dunphie",
-            "email": "bdunphie2@ifeng.com",
-            "gender": "Female",
-            "ip_address": "190.82.103.123"
-          }]
-    )
-  })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// XSUAA Middleware
+
+passport.use(new JWTStrategy(xsenv.getServices({uaa:{tag:'xsuaa'}}).uaa));
+
+app.use(passport.initialize());
+let authenticateRoute = passport.authenticate('JWT', { session: false });
+
+
+var hanaConfig = xsenv.cfServiceCredentials({ tag: 'hana' });
+app.use(hdbext.middleware(hanaConfig));
+
+
+
+const ProductsRoute=require('./routes/Products');
+app.use('/routes/Products',authenticateRoute, ProductsRoute);
+
+
+
+
+//XSJS routing
+var options = {
+	auditLog : { logToConsole: true }, 
+	redirectUrl: "/index.xsjs",
+	xsApplicationUser: false
+};
+
+try {
+  options = Object.assign(options, xsenv.getServices({ hana: { tag: "hana" } }));
+} catch (err) {
+  console.log("[WARN]", err.message);
+}
+
+try {
+  options = Object.assign(options, xsenv.getServices({ uaa: { tag: "xsuaa" } }));
+} catch (err) {
+  console.log("[WARN]", err.message);
+}
+var xsjsApp = xsjs(options);
+app.use(xsjsApp);
+
+
+app.listen(port);
