@@ -29,7 +29,7 @@ modules:
   type: nodejs
   path: srv
   parameters:
-      disk-quota: 256M
+      disk-quota: 1024M
       memory: 512M
   provides:
     - name: node-api    
@@ -37,6 +37,7 @@ modules:
         srv-url: ${default-url}
   requires:
     - name: TRGDEMO1-uaa-service
+    - name: TRGDEMO1-db
   properties:
     SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
 
