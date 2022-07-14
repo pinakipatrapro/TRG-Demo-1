@@ -6,3 +6,4 @@ project1/app/.env
 project1/db/.env
 # auto generated wildcard
 project1/srv/.env
+mta_archives/TRGDEMO1_1.0.0.mtar
