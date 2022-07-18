@@ -33,4 +33,23 @@ router.post('/create', async function(req, res, next) {
 });
 
 
+router.get('/delete/:id', async function(req, res, next) {  
+    var sql = `
+      delete from "TRG.PRODUCT" where ID = '${req.params.id}';
+    `
+    try {
+      
+      let db = new dbClass(req.db);
+      const statement = await db.preparePromisified(sql);
+      const results = await db.statementExecPromisified(statement, [])
+      let result = JSON.stringify({
+        message : `Product "${req.params.id}" deleted successfully`,
+        data: results
+      })
+      return res.type("application/json").status(200).send(result)
+    } catch (e) {
+      return res.type("text/plain").status(500).send(`ERROR: ${e.toString()}`)
+    }
+  });
+
 module.exports = router;

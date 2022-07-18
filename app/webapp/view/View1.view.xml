@@ -4,16 +4,19 @@
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
-            <HBox>
-                <!-- <Button text="Add List Item" press="onAddListItem"/> -->
-                <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Product'}" height="30rem" width="40rem">
+                <List headerText="{i18n>listTitle}" items="{path:'viewModel>/Product'}" height="30rem" mode="Delete" width="95%" class="sapUiSmallMargin"
+                    delete="onProductDelete"    
+                >
+                    <headerToolbar>
+                        <Toolbar >
+                            <Title text="My Product List"/>
+                            <ToolbarSpacer/>
+                            <SearchField width="20rem" ></SearchField>
+                            <Button text="Add Product" press="onAddProduct"/>
+                        </Toolbar>
+                    </headerToolbar>
                     <ObjectListItem title="{viewModel>Name}"  intro="{viewModel>Description}"/>
                 </List>
-
-                <List headerText="Local Express" items="{path:'localModel>/listData'}" height="30rem" width="40rem">
-                    <ObjectListItem title="{localModel>first_name}"  intro="{localModel>email}"/>
-                </List>
-             </HBox>
         </content>
     </Page>
 </mvc:View>

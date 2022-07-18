@@ -51,3 +51,9 @@ Authorization: Bearer {{token}}
     "name"         : "TEST", 
     "description"  : "TEST" 
 }
+
+
+### Delete Project
+GET http://localhost:4004/routes/Products/delete/660C00506AC6561F1800AD7AE8F92032
+Content-Type: application/json
+Authorization: Bearer {{token}}

@@ -21,7 +21,23 @@ sap.ui.define([
                 //         "first_name": data
                 // });
                 // this.getView().getModel('localModel').updateBindings();
+            },
+            onProductDelete : function(oEvent){
+                debugger;
+                let productID = oEvent.getParameter('listItem').getBindingContext('viewModel').getProperty('ID');
+               
+
+                 var settings = {
+                    "url": `/localNode/routes/Products/delete/${productID}`,
+                    "method": "GET",
+                    "headers":{
+                    "X-CSRF-Token":this.getView().getModel('viewModel').getSecurityToken(),
+                    "Content-Type": "application/json"
+                    }
+                };
+                $.ajax(settings).done(()=>{
+                    this.getView().getModel('viewModel').refresh();
+                });
             }
-            //onBeforRendering /onAfterRendering / onExit
         });
     });
